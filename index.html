@@ -6,26 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather-watch</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="search">
-            <input type="text" id="search-bar" class = "search-bar" placeholder="Search">
-            <button class="search-btn" id="btn">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"></path></svg>
-            </button>
+    <header>
+        <h1>Weather Watch <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M177.438 17.625c-36.363 63.13-6.562 132.455 51.593 167.906 73.338 44.71 85.25 182.336 197.44 180.032 18.768 37.002 32.436 74.428 42 113.844L486.624 475c-7.386-30.444-17.18-59.834-29.75-88.72 19.49-32.138 28.49-64.438 35.938-96.75L477.5 306.657c1.212-13.487.876-26.89-.688-41l-13.625 26.938c2.42-20.608 3.05-39.98 3.875-59.5l-19.53 33.97c-2.876-17.033-6.577-33.074-10.188-49.252l-8.25 30.97C371.358 118 210.67 101.476 177.438 17.624zM33.78 106c-83.367 187.217 151.31 342.733 292.44 323.47 29.146 16.715 54.977 35.964 78.905 58.436l12.78-13.625c-18.923-17.77-39.093-33.676-61-47.936-1.57-28.975-9.564-53.884-18.56-78.156l-6.22 42.843c-10.212-27.47-23.103-48.372-35.813-69.717l3.22 51.968c-9.037-24.734-22.188-45.01-36.032-64.53l5.094 42.97c-16.975-23.893-34.854-40.735-52.656-58.064l12.625 37.594C144.105 263.974 78.553 196.544 33.78 106z" fill-rule="evenodd"></path></svg></h1>
+    </header>
+    <div class="pageContainer row min-vh-100">
+        <div class="searchcontainer col-12 col-lg-2 d-flex flex-column">
+            <label for="" class="cityName">Search for a City:</label>
+            <input type="text" class="search" id="search" placeholder="Search">
+            <button class="search-btn" id="btn">Search</button>
+            <ul class="searchedCities">
+                
+            </ul>
         </div>
-        <div class="weather">
-            <h2 class="city">City Name</h2>
-            <h2 class="temp"> <span class="hidden clear">°F</span> </h2>
-            <img src="" alt="" class= "icon">
-            <div class="discription">Cloudy</div>
-            <div class="humidity">Humidity: 100%</div>
-            <div class="wind">Wind Speed: 1 km/h</div>
+        <div class="Weather col-12 col-lg-10 d-flex flex-column">
+            <div class="todayWeather">
+                <div class = "Header">
+                    <h2 class="city">City Name</h2>
+                    <h3 class="date">Today's Date</h3>
+                </div>
+                <img src="" alt="" class = "icon">
+                <div class="detail temp">Temp:</div>
+                <div class="detail wind">Wind:</div>
+                <div class="detail humidity">Humidity:</div>
+                <div class="detail uv">UV Index:</div>
+            </div>
+            <h4 class = "forecastHeader">5-day Forcast:</h4>
+            <div class="forecast row">
+                <div class="card col-lg-2 col-9">
+                    <h4 class = "forcastDate">11/11/2021</h4>
+                    <img class = "img-forcast" src="" alt="">
+                    <div class="forcast-detail temp">Temp: 100F</div>
+                    <div class="forcast-detail wind">Wind: 6.67 MPH</div>
+                    <div class="forcast-detail humidity">Humidity: 46%</div>
+                </div>
+                <div class="card col-lg-2 col-9">
+                    <h4 class = "forcastDate">11/11/2021</h4>
+                    <img class = "img-forcast" src="" alt="">
+                    <div class="forcast-detail temp">Temp: 100F</div>
+                    <div class="forcast-detail wind">Wind: 6.67 MPH</div>
+                    <div class="forcast-detail humidity">Humidity: 46%</div>
+                </div>
+                <div class="card col-lg-2 col-9">
+                    <h4 class = "forcastDate">11/11/2021</h4>
+                    <img class = "img-forcast" src="" alt="">
+                    <div class="forcast-detail temp">Temp: 100F</div>
+                    <div class="forcast-detail wind">Wind: 6.67 MPH</div>
+                    <div class="forcast-detail humidity">Humidity: 46%</div>
+                </div>
+                <div class="card col-lg-2 col-9">
+                    <h4 class = "forcastDate">11/11/2021</h4>
+                    <img class = "img-forcast" src="" alt="">
+                    <div class="forcast-detail temp">Temp: 100F</div>
+                    <div class="forcast-detail wind">Wind: 6.67 MPH</div>
+                    <div class="forcast-detail humidity">Humidity: 46%</div>
+                </div>
+                <div class="card col-lg-2 col-9">
+                    <h4 class = "forcastDate">11/11/2021</h4>
+                    <img class = "img-forcast" src="" alt="">
+                    <div class="forcast-detail temp">Temp: 100F</div>
+                    <div class="forcast-detail wind">Wind: 6.67 MPH</div>
+                    <div class="forcast-detail humidity">Humidity: 46%</div>
+                </div>
+                
+                
+                
+            </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>

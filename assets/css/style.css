@@ -1,58 +1,118 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+*{
     margin: 0;
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.card{
-    background-color: #000000d0;
-    color:white;
-    padding: 2rem;
-    border-radius: 2rem;
-    width: 100%;
-    max-width: 420px;
-    margin: 2rem;
-    font-family: 'Poppins', sans-serif;
-}
-.search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.search-bar {
-    border: none;
-    outline: none;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    color: white;
-    background: #7c7c7c2b;
+
+header{
+    background-color: #fcf6f5ff;
+    padding: 0.7rem;
     font-family: 'Poppins', sans-serif;
-    font-size: 120%;
-    width: 80%;
+    text-align: center;
+    
+}
+
+
+.searchcontainer{
+    background-color:#89abe3ff;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.7rem;
+}
+
+.cityName{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.search{
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 1rem;
+    border: none;
+    margin-bottom: 0.7rem;
 }
 
 .search-btn{
     border: none;
+    padding: 0.4rem;
+    font-weight: 800;
     outline: none;
-    padding: 0.5rem;
-   margin-left: 0.5rem;
-   border-radius: 50%;
-   height: 2.3rem;
-   width: 2.3rem;
-   background: #7c7c7c2b;
-    cursor: pointer;
-    color: white;
-    transition: 0.3s ease-in-out;
-}
-.search-btn:hover{
-    background: #7c7c7c4b;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.temp{
-    margin: 0;
+/* add hover to search */
+
+.searchedCities{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+
 }
+.searchedcity{
+    margin: 0.6rem;
+    width: 80%;
+    padding: 0.3rem;
+    border: none;
+    font-weight: 800;
+    outline: none;
+    border-radius: 1rem;
+}
+
+/* add hover to cities */
+.Weather{
+    background-color: #fcf6f5ff;
+}
+.todayWeather{
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+}
+
+
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.forecastHeader{
+    margin:1rem;
+}
+
+.card{
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: #89abe3ff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.forecast{
+    margin-left: 1rem;
+}
+
+.forcastDate{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.forcast-detail{
+    margin-bottom: 0.6rem;
+}
+
