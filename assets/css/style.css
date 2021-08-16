@@ -26,6 +26,7 @@ header{
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: 800;
+    margin-top: 1rem;
 }
 
 .search{
@@ -75,7 +76,11 @@ header{
     border-radius: 1rem;
 }
 
-
+.icon{
+    background-color: #d3d3d3d7;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
 
 .Header{
     display: flex;
@@ -93,6 +98,7 @@ header{
 
 .forecastHeader{
     margin:1rem;
+    align-self: center;
 }
 
 .card{
@@ -105,6 +111,9 @@ header{
 
 .forecast{
     margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .forcastDate{

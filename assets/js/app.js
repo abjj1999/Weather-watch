@@ -69,6 +69,7 @@ var getCorr = function(city){
         .then(function(data){
             
             getCurrent(data[0].lat, data[0].lon)
+            getDaily(data[0].lat, data[0].lon)
         })
     })
 }
@@ -116,3 +117,56 @@ var showCurrent = function(data){
      
 }
 
+var getDaily = function(lat, lon) {
+    const baseUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
+    const latt = 'lat=' + lat;
+    const lonn = '&lon=' + lon;
+    const rest = '&exclude=minutely,hourly,current,alert&units=imperial&appid=ce9ddbed2a5483d36efd8e6483c1ffa6';
+    fetch(baseUrl + latt + lonn + rest)
+    .then(function(response){
+        response.json()
+        .then(function(data){
+            console.log(data.daily);
+            showForcast(data.daily);
+        })
+    })
+}
+
+const pagecontainer = document.querySelector('.forecast');
+var showForcast = function(data) {
+    pagecontainer.innerHTML = " ";
+    for (var i = 1; i < data.length - 2; ++i){
+        console.log(data[i])
+        const eachDay = document.createElement("div");
+        eachDay.classList.add("card", "col-lg-2", "col-9");
+
+        const date = document.createElement("h4");
+        date.classList.add("forcastDate");
+        var dateString = moment.unix(data[i].dt).format("MM/DD/YYYY");
+        date.textContent = dateString;
+
+        //console.log(data[i].weather[0].icon);
+        //img forcast 
+        
+
+        //temp forcast
+        const temp = document.createElement('div');
+        temp.classList.add("forcast-detail", "temp");
+        temp.textContent = "Temp: " + data[i].temp.day + "F";
+        //wind forcast
+        const wind = document.createElement('div');
+        wind.classList.add("forcast-detail", 'wind');
+        wind.textContent = "Wind: " + data[i].wind_speed + " MPH";
+        //humidity forcast
+        const humidity = document.createElement('div');
+        humidity.classList.add("forcast-detail", "humidity");
+        humidity.textContent = "Humidity: " + data[i].humidity + "%";
+
+        eachDay.appendChild(date);
+        //eachDay.appendChild(img);
+        eachDay.appendChild(temp);
+        eachDay.appendChild(wind);
+        eachDay.appendChild(humidity);
+        pagecontainer.appendChild(eachDay);
+    }
+}
